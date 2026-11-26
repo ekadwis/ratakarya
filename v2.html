@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RATAKARYA — Jasa Bongkar Bangunan &amp; Konstruksi Pembongkaran</title>
+<meta name="description" content="Jasa bongkar rumah, ruko, gudang, dan gedung bertingkat di Jabodetabek. Gratis survei, RAB transparan, standar K3 ketat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script>
+tailwind.config={theme:{extend:{fontFamily:{sans:['"Bricolage Grotesque"','system-ui','sans-serif']},colors:{bone:'#EDEAE4',ink:'#14130F',cobalt:'#1D4ED8',slab:'#D9D5CC'}}}}
+</script>
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Bricolage Grotesque',system-ui,sans-serif;background:#EDEAE4;color:#14130F}
+h1,h2,h3{letter-spacing:-.03em}
+.snap{scroll-snap-type:x mandatory;scrollbar-width:thin}
+.snap>*{scroll-snap-align:start}
+.faq-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s}
+.faq-open .faq-body{grid-template-rows:1fr}
+.faq-body>div{overflow:hidden}
+.faq-open .plus{transform:rotate(45deg)}
+.plus{transition:transform .25s}
+img{background:#D9D5CC}
+:focus-visible{outline:3px solid #1D4ED8;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body class="antialiased text-[17px]">
+
+<!-- Navbar -->
+<header class="fixed top-0 inset-x-0 z-50 bg-bone/90 backdrop-blur border-b-2 border-ink">
+  <div class="px-5 lg:px-10 h-[60px] flex items-center justify-between">
+    <a href="#beranda" class="flex items-baseline gap-3">
+      <span class="text-2xl font-extrabold">RATAKARYA</span>
+      <span class="hidden sm:inline text-xs opacity-70">Demolition &amp; Site Clearing</span>
+    </a>
+    <nav class="hidden lg:flex gap-7 text-sm font-semibold">
+      <a class="hover:text-cobalt" href="#beranda">Beranda</a><a class="hover:text-cobalt" href="#layanan">Layanan</a>
+      <a class="hover:text-cobalt" href="#keunggulan">Keunggulan</a><a class="hover:text-cobalt" href="#alur">Alur Kerja</a>
+      <a class="hover:text-cobalt" href="#galeri">Galeri</a><a class="hover:text-cobalt" href="#faq">FAQ</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="#kontak" class="bg-cobalt hover:bg-ink text-white text-sm font-semibold px-4 py-2 transition">Survei Gratis</a>
+      <button id="menuBtn" class="lg:hidden p-2" aria-label="Buka menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden lg:hidden border-t-2 border-ink bg-bone">
+    <div class="px-5 py-4 grid grid-cols-2 gap-3 font-semibold">
+      <a href="#beranda">Beranda</a><a href="#layanan">Layanan</a><a href="#keunggulan">Keunggulan</a>
+      <a href="#alur">Alur Kerja</a><a href="#galeri">Galeri</a><a href="#faq">FAQ</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- Hero: foto penuh, teks di bawah -->
+<section id="beranda" class="relative min-h-[100svh] flex items-end text-white pt-[60px]">
+  <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=80" alt="Ekskavator membongkar bangunan di lokasi proyek" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high">
+  <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/10"></div>
+  <div class="relative w-full px-5 lg:px-10 pb-10 lg:pb-14">
+    <div class="grid lg:grid-cols-12 gap-8 items-end">
+      <div class="lg:col-span-8">
+        <p class="inline-flex items-center gap-2 bg-white text-ink text-sm font-semibold px-3 py-1.5"><i data-lucide="map-pin" class="w-4 h-4 text-cobalt"></i>Melayani Area Jabodetabek &amp; Sekitarnya</p>
+        <h1 class="mt-5 text-5xl sm:text-6xl lg:text-[5.5rem] font-extrabold leading-[0.98]">Bongkar Bangunan Sampai Rata Tanah — Cepat, Aman, &amp; Terukur.</h1>
+      </div>
+      <div class="lg:col-span-4">
+        <p class="text-base lg:text-lg leading-relaxed text-white/85">Solusi pembongkaran rumah tua, ruko, gudang, hingga gedung bertingkat dengan armada alat berat lengkap, standar K3 ketat, dan opsi potongan biaya dari nilai material bekas.</p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="https://wa.me/6281299887766?text=Halo%20Ratakarya,%20saya%20ingin%20konsultasi%20bongkar%20bangunan" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-cobalt hover:bg-blue-700 font-semibold px-6 py-3.5 transition"><i data-lucide="message-circle" class="w-5 h-5"></i>Konsultasi &amp; Jadwalkan Survei</a>
+          <a href="#galeri" class="inline-flex items-center justify-center border-2 border-white hover:bg-white hover:text-ink font-semibold px-6 py-3.5 transition">Lihat Portofolio Proyek</a>
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 inline-flex items-center gap-3 bg-bone text-ink px-4 py-3 border-l-8 border-cobalt">
+      <i data-lucide="clipboard-check" class="text-cobalt"></i><span class="font-semibold">"Gratis Survei Lokasi &amp; Hitung Estimasi Biaya"</span>
+    </div>
+  </div>
+</section>
+
+<!-- Statistik: strip horizontal -->
+<section class="bg-ink text-bone">
+  <div class="grid grid-cols-2 lg:grid-cols-4">
+    <div class="p-6 lg:p-8 border-b lg:border-b-0 border-r border-bone/20"><p class="text-5xl font-extrabold">650+</p><p class="mt-1 text-sm opacity-75">Bangunan Dibongkar</p></div>
+    <div class="p-6 lg:p-8 border-b lg:border-b-0 lg:border-r border-bone/20"><p class="text-5xl font-extrabold">12+</p><p class="mt-1 text-sm opacity-75">Tahun Pengalaman Lapangan</p></div>
+    <div class="p-6 lg:p-8 border-r border-bone/20"><p class="text-5xl font-extrabold">98%</p><p class="mt-1 text-sm opacity-75">Tepat Waktu Sesuai Target</p></div>
+    <div class="p-6 lg:p-8"><p class="text-5xl font-extrabold">100%</p><p class="mt-1 text-sm opacity-75">Standar APD &amp; K3 Lapangan</p></div>
+  </div>
+</section>
+
+<!-- Layanan: judul kiri sticky, daftar baris kanan -->
+<section id="layanan" class="px-5 lg:px-10 py-20 lg:py-28">
+  <div class="grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <div class="lg:sticky lg:top-24">
+        <h2 class="text-4xl lg:text-5xl font-extrabold leading-[1.05]">Layanan Pembongkaran &amp; Pengosongan Lahan</h2>
+        <p class="mt-5 italic opacity-80">Dikerjakan oleh tim teknis berpengalaman dengan metode manual maupun alat berat sesuai kondisi lingkungan sekitar.</p>
+      </div>
+    </div>
+    <div id="services" class="lg:col-span-8 border-t-2 border-ink"></div>
+  </div>
+</section>
+
+<!-- Keunggulan: panel biru + grid 2x2 -->
+<section id="keunggulan" class="bg-slab">
+  <div class="grid lg:grid-cols-2">
+    <div class="relative min-h-[320px]">
+      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80" alt="Pekerja konstruksi berhelm dan rompi keselamatan di lokasi proyek" class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute left-0 bottom-0 bg-cobalt text-white p-6 max-w-xs"><p class="text-4xl font-extrabold">100%</p><p class="text-sm">Pekerja memakai APD lengkap</p></div>
+    </div>
+    <div class="px-5 lg:px-12 py-16 lg:py-24">
+      <h2 class="text-4xl lg:text-5xl font-extrabold leading-[1.05]">Mengapa Mempercayakan Proyek ke Ratakarya?</h2>
+      <div class="mt-10 grid sm:grid-cols-2 gap-px bg-ink border-2 border-ink">
+        <div class="bg-bone p-6"><i data-lucide="search-check" class="text-cobalt w-8 h-8"></i><h3 class="mt-4 font-bold text-lg">Gratis Survei &amp; Analisa Lokasi</h3><p class="mt-2 text-[15px] opacity-85">Tim kami datang langsung mengecek struktur bangunan dan akses jalan tanpa dipungut biaya.</p></div>
+        <div class="bg-bone p-6"><i data-lucide="badge-percent" class="text-cobalt w-8 h-8"></i><h3 class="mt-4 font-bold text-lg">Bisa Potong Biaya (Jual Beli Material)</h3><p class="mt-2 text-[15px] opacity-85">Kusen kayu, besi beton, atap baja ringan, atau material layak pakai lainnya dapat kami beli untuk mengurangi total biaya bongkar.</p></div>
+        <div class="bg-bone p-6"><i data-lucide="file-text" class="text-cobalt w-8 h-8"></i><h3 class="mt-4 font-bold text-lg">RAB Jelas &amp; Transparan</h3><p class="mt-2 text-[15px] opacity-85">Rincian biaya disepakati di awal tanpa biaya tambahan tersembunyi di tengah pengerjaan.</p></div>
+        <div class="bg-bone p-6"><i data-lucide="hard-hat" class="text-cobalt w-8 h-8"></i><h3 class="mt-4 font-bold text-lg">Keamanan Lingkungan &amp; APD Lengkap</h3><p class="mt-2 text-[15px] opacity-85">Pemasangan pengaman area (pagar seng/jaring pengaman) serta penggunaan APD wajib bagi seluruh pekerja di lapangan.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Alur kerja: carousel horizontal -->
+<section id="alur" class="py-20 lg:py-28">
+  <div class="px-5 lg:px-10 flex items-end justify-between gap-4">
+    <h2 class="text-4xl lg:text-5xl font-extrabold">Tahapan Kerja Terstruktur</h2>
+    <div class="flex gap-2">
+      <button id="prev" class="w-11 h-11 border-2 border-ink grid place-items-center hover:bg-ink hover:text-bone transition" aria-label="Sebelumnya"><i data-lucide="arrow-left"></i></button>
+      <button id="next" class="w-11 h-11 border-2 border-ink grid place-items-center hover:bg-ink hover:text-bone transition" aria-label="Berikutnya"><i data-lucide="arrow-right"></i></button>
+    </div>
+  </div>
+  <div id="steps" class="snap mt-10 px-5 lg:px-10 flex gap-4 overflow-x-auto pb-4"></div>
+</section>
+
+<!-- Galeri: masonry -->
+<section id="galeri" class="bg-ink text-bone px-5 lg:px-10 py-20 lg:py-28">
+  <h2 class="text-4xl lg:text-5xl font-extrabold">Dokumentasi Proyek Lapangan</h2>
+  <div id="filters" class="mt-8 flex flex-wrap gap-2" role="tablist" aria-label="Filter kategori proyek"></div>
+  <div id="gallery" class="mt-10 columns-1 sm:columns-2 lg:columns-3 gap-5"></div>
+</section>
+
+<!-- Testimoni: satu kutipan besar, bisa diganti -->
+<section class="px-5 lg:px-10 py-20 lg:py-28">
+  <div class="grid lg:grid-cols-12 gap-10 items-start">
+    <h2 class="lg:col-span-4 text-4xl lg:text-5xl font-extrabold leading-[1.05]">Kata Klien Kami</h2>
+    <div class="lg:col-span-8">
+      <i data-lucide="quote" class="w-10 h-10 text-cobalt"></i>
+      <blockquote id="tQuote" class="mt-4 text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug min-h-[11rem]"></blockquote>
+      <div class="mt-8 flex flex-wrap items-center justify-between gap-4 border-t-2 border-ink pt-5">
+        <div><p id="tName" class="font-bold text-lg"></p><p id="tRole" class="opacity-75 text-sm"></p></div>
+        <div id="tDots" class="flex gap-2"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ: dua kolom -->
+<section id="faq" class="bg-slab px-5 lg:px-10 py-20 lg:py-28">
+  <div class="grid lg:grid-cols-12 gap-10">
+    <h2 class="lg:col-span-4 text-4xl lg:text-5xl font-extrabold leading-[1.05]">Pertanyaan yang Sering Diajukan</h2>
+    <div id="faqList" class="lg:col-span-8 border-t-2 border-ink"></div>
+  </div>
+</section>
+
+<!-- Kontak: latar biru kobalt -->
+<section id="kontak" class="bg-cobalt text-white px-5 lg:px-10 py-20 lg:py-28">
+  <div class="grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <h2 class="text-4xl lg:text-5xl font-extrabold leading-[1.05]">Jadwalkan Konsultasi &amp; Survei Gratis</h2>
+      <p class="mt-5 text-white/85 max-w-md">Ceritakan kondisi bangunan Anda. Tim kami akan menghubungi untuk menjadwalkan survei dan menyiapkan estimasi biaya.</p>
+      <dl class="mt-10 space-y-5">
+        <div class="flex gap-4"><i data-lucide="map" class="shrink-0"></i><div><dt class="font-bold">Wilayah Layanan</dt><dd class="text-white/85">Jakarta, Bogor, Depok, Tangerang, Bekasi</dd></div></div>
+        <div class="flex gap-4"><i data-lucide="building-2" class="shrink-0"></i><div><dt class="font-bold">Alamat Kantor</dt><dd class="text-white/85">Jl. Raya Kalimalang No. 88, Duren Sawit, Jakarta Timur</dd></div></div>
+        <div class="flex gap-4"><i data-lucide="clock" class="shrink-0"></i><div><dt class="font-bold">Jam Operasional</dt><dd class="text-white/85">Senin – Sabtu, 08.00 – 17.00 WIB</dd></div></div>
+        <div class="flex gap-4"><i data-lucide="phone" class="shrink-0"></i><div><dt class="font-bold">Telepon / WhatsApp</dt><dd class="text-white/85">0812-9988-7766</dd></div></div>
+      </dl>
+    </div>
+    <form id="surveyForm" class="lg:col-span-7 bg-bone text-ink p-6 sm:p-10 grid sm:grid-cols-2 gap-5">
+      <h3 class="sm:col-span-2 text-2xl font-extrabold">Form Permintaan Survei</h3>
+      <div><label for="nama" class="block text-sm font-semibold mb-1.5">Nama Lengkap</label><input id="nama" required class="w-full bg-white border-2 border-ink px-4 py-3 focus:border-cobalt focus:outline-none" placeholder="Contoh: Budi Santoso"></div>
+      <div><label for="wa" class="block text-sm font-semibold mb-1.5">Nomor WhatsApp</label><input id="wa" type="tel" required class="w-full bg-white border-2 border-ink px-4 py-3 focus:border-cobalt focus:outline-none" placeholder="08xx-xxxx-xxxx"></div>
+      <div><label for="jenis" class="block text-sm font-semibold mb-1.5">Jenis Bangunan</label>
+        <select id="jenis" required class="w-full bg-white border-2 border-ink px-4 py-3 focus:border-cobalt focus:outline-none">
+          <option value="">Pilih jenis</option><option>Rumah Tinggal</option><option>Ruko / Bangunan Usaha</option><option>Gedung Bertingkat</option><option>Gudang / Pabrik</option><option>Interior / Strip-Out</option><option>Lahan Kosong / Buang Puing</option>
+        </select></div>
+      <div><label for="kota" class="block text-sm font-semibold mb-1.5">Lokasi / Kota</label><input id="kota" required class="w-full bg-white border-2 border-ink px-4 py-3 focus:border-cobalt focus:outline-none" placeholder="Contoh: Depok"></div>
+      <div class="sm:col-span-2"><label for="luas" class="block text-sm font-semibold mb-1.5">Perkiraan Luas (m²)</label><input id="luas" type="number" min="1" required class="w-full bg-white border-2 border-ink px-4 py-3 focus:border-cobalt focus:outline-none" placeholder="Contoh: 120"></div>
+      <button class="sm:col-span-2 inline-flex items-center justify-center gap-2 bg-ink hover:bg-cobalt text-white font-semibold py-4 transition"><i data-lucide="send" class="w-5 h-5"></i>Kirim Lewat WhatsApp</button>
+      <p class="sm:col-span-2 text-xs opacity-70">Data Anda dikirim langsung ke WhatsApp tim Ratakarya, tidak disimpan di situs ini.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-ink text-bone/70">
+  <div class="px-5 lg:px-10 py-14 grid md:grid-cols-3 gap-10">
+    <div><p class="text-2xl font-extrabold text-bone">RATAKARYA</p><p class="mt-3 text-sm leading-relaxed">Kontraktor jasa bongkar bangunan dan pembersihan lahan di Jabodetabek. Bekerja terukur, aman, dan transparan sejak lebih dari 12 tahun lalu.</p></div>
+    <div><p class="font-bold text-bone">Tautan Layanan</p><ul class="mt-3 space-y-2 text-sm">
+      <li><a class="hover:text-white" href="#layanan">Bongkar Rumah Tinggal</a></li><li><a class="hover:text-white" href="#layanan">Bongkar Ruko &amp; Gedung</a></li>
+      <li><a class="hover:text-white" href="#layanan">Bongkar Gudang &amp; Pabrik</a></li><li><a class="hover:text-white" href="#layanan">Pembersihan Lahan &amp; Buang Puing</a></li></ul></div>
+    <div><p class="font-bold text-bone">Kontak &amp; Area Layanan</p><ul class="mt-3 space-y-2 text-sm">
+      <li>Jl. Raya Kalimalang No. 88, Duren Sawit, Jakarta Timur</li><li>WhatsApp: 0812-9988-7766</li><li>Jakarta, Bogor, Depok, Tangerang, Bekasi</li></ul></div>
+  </div>
+  <div class="border-t border-bone/15 text-center text-xs py-5">© <span id="yr">2026</span> RATAKARYA. Seluruh hak cipta dilindungi.</div>
+</footer>
+
+<a href="https://wa.me/6281299887766?text=Halo%20Ratakarya,%20saya%20ingin%20konsultasi%20bongkar%20bangunan" target="_blank" rel="noopener" aria-label="Chat WhatsApp Ratakarya" class="fixed bottom-5 right-5 z-50 bg-[#16A34A] hover:bg-green-700 text-white w-14 h-14 grid place-items-center shadow-xl transition"><i data-lucide="message-circle" class="w-7 h-7"></i></a>
+
+<script>
+const WA='https://wa.me/6281299887766?text=';
+const fb="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221%22 height=%221%22><rect width=%221%22 height=%221%22 fill=%22%23CBD5E1%22/></svg>'";
+
+const services=[
+ ['home','Bongkar Rumah Tinggal','Pembongkaran rumah lama/tua hingga rata tanah termasuk pengangkutan puing sisa bongkaran agar lahan siap bangun kembali.'],
+ ['store','Bongkar Ruko & Bangunan Usaha','Pengerjaan pembongkaran ruko deret maupun tunggal dengan pengamanan ekstra agar tidak merusak dinding bangunan tetangga.'],
+ ['building','Bongkar Gedung Bertingkat','Pembongkaran gedung kantor, sekolah, atau bangunan komersial bertingkat dengan tahapan teknis terstruktur dan pengawasan keselamatan.'],
+ ['warehouse','Bongkar Gudang & Pabrik','Pembongkaran konstruksi baja, atap bentang lebar, hingga fasilitas pabrik dengan opsi pembelian material besi/seng bekas.'],
+ ['hammer','Pengosongan Interior & Strip-Out','Pembongkaran partisi, plafon, lantai keramik, dan instalasi lama untuk persiapan renovasi total gedung atau ruang komersial.'],
+ ['truck','Pembersihan Lahan & Buang Puing','Pengangkutan puing bekas proyek menggunakan armada dump truck hingga lokasi bersih, rata, dan rapi.']
+];
+document.getElementById('services').innerHTML=services.map(s=>`
+<article class="group grid sm:grid-cols-[auto_1fr_auto] gap-x-6 gap-y-3 items-start py-7 border-b-2 border-ink hover:bg-slab/60 transition px-2">
+  <span class="w-12 h-12 bg-ink text-bone group-hover:bg-cobalt grid place-items-center transition"><i data-lucide="${s[0]}"></i></span>
+  <div><h3 class="text-xl lg:text-2xl font-bold">${s[1]}</h3><p class="mt-2 opacity-85 max-w-xl">${s[2]}</p></div>
+  <a target="_blank" rel="noopener" href="${WA}${encodeURIComponent('Halo Ratakarya, saya ingin tanya estimasi: '+s[1])}" class="font-semibold text-cobalt hover:underline whitespace-nowrap sm:pt-2">Tanya Estimasi →</a>
+</article>`).join('');
+
+const steps=[
+ ['Survei Lokasi','Pengukuran luas bangunan, pengecekan struktur, dan akses armada.'],
+ ['Penawaran Biaya','Pengiriman estimasi harga transparan (termasuk hitung nilai material bekas).'],
+ ['Kesepakatan & Jadwal','Penandatanganan SPK dan penentuan tanggal mulai pekerjaan.'],
+ ['Proses Pembongkaran','Eksekusi pembongkaran bertahap menggunakan alat berat atau tenaga manual.'],
+ ['Pembersihan Puing','Pemilahan material dan pengangkutan sisa puing keluar area proyek.'],
+ ['Serah Terima Lahan','Pengecekan akhir bersama klien hingga lahan dinyatakan bersih dan rata.']
+];
+const st=document.getElementById('steps');
+st.innerHTML=steps.map((s,i)=>`
+<div class="shrink-0 w-[78vw] sm:w-[340px] ${i%2?'bg-ink text-bone':'bg-bone border-2 border-ink'} p-7 min-h-[260px] flex flex-col">
+  <p class="text-7xl font-extrabold ${i%2?'text-cobalt':'text-cobalt'} leading-none">0${i+1}</p>
+  <h3 class="mt-auto pt-8 text-2xl font-bold">${s[0]}</h3>
+  <p class="mt-2 opacity-85 text-[15px]">${s[1]}</p>
+</div>`).join('');
+document.getElementById('next').onclick=()=>st.scrollBy({left:360,behavior:'smooth'});
+document.getElementById('prev').onclick=()=>st.scrollBy({left:-360,behavior:'smooth'});
+
+const U=id=>`https://images.unsplash.com/${id}?auto=format&fit=crop&w=800&q=80`;
+const projects=[
+ ['Rumah','Bongkar Total Rumah 2 Lantai','Menteng, Jakarta Pusat','7 Hari',U('photo-1504307651254-35680f356dfd'),'Ekskavator membongkar rumah dua lantai','aspect-[4/5]'],
+ ['Ruko & Gedung','Pembongkaran 3 Unit Ruko Deret','BSD City, Tangerang Selatan','10 Hari',U('photo-1541888946425-d81bb19240f5'),'Area pembongkaran ruko deret dengan pagar pengaman','aspect-[4/3]'],
+ ['Gudang','Bongkar Konstruksi Baja Gudang Logistik','Cikarang, Bekasi','14 Hari',U('photo-1589939705384-5185137a7f0f'),'Struktur baja gudang yang sedang dibongkar','aspect-square'],
+ ['Rumah','Perataan Lahan & Buang Puing Rumah Tua','Kemang, Jakarta Selatan','5 Hari',U('photo-1429497419816-9ca5cfb4571a'),'Lahan rata setelah puing rumah tua diangkut','aspect-[4/3]'],
+ ['Ruko & Gedung','Strip-Out Interior Gedung Perkantoran 4 Lantai','Kuningan, Jakarta Selatan','12 Hari',U('photo-1503387762-592deb58ef4e'),'Pekerjaan strip-out interior gedung perkantoran','aspect-[4/5]'],
+ ['Gudang','Pembongkaran Workshop & Pembersihan Area','Cibinong, Bogor','9 Hari',U('photo-1621905251189-08b45d6a269e'),'Lokasi workshop yang sedang dibersihkan','aspect-[4/3]']
+];
+const cats=['Semua','Rumah','Ruko & Gedung','Gudang'],gal=document.getElementById('gallery'),fl=document.getElementById('filters');
+function render(c){
+  gal.innerHTML=projects.filter(p=>c==='Semua'||p[0]===c).map(p=>`
+  <article class="mb-5 break-inside-avoid bg-bone text-ink">
+    <img src="${p[4]}" alt="${p[5]}" loading="lazy" onerror="${fb}" class="w-full ${p[6]} object-cover">
+    <div class="p-5">
+      <p class="text-sm font-semibold text-cobalt">${p[0]}</p>
+      <h3 class="mt-1 text-xl font-bold leading-tight">${p[1]}</h3>
+      <p class="mt-3 text-sm flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i>${p[2]}</p>
+      <p class="mt-1 text-sm flex items-center gap-2"><i data-lucide="timer" class="w-4 h-4"></i>Selesai dalam ${p[3]}</p>
+    </div>
+  </article>`).join('');
+  lucide.createIcons();
+}
+fl.innerHTML=cats.map(c=>`<button role="tab" data-cat="${c}" class="px-4 py-2 text-sm font-semibold border-2 transition">${c}</button>`).join('');
+function setActive(c){fl.querySelectorAll('button').forEach(b=>{const on=b.dataset.cat===c;b.setAttribute('aria-selected',on);b.className='px-4 py-2 text-sm font-semibold border-2 transition '+(on?'bg-cobalt border-cobalt text-white':'border-bone/40 hover:border-bone')})}
+fl.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;setActive(b.dataset.cat);render(b.dataset.cat)});
+setActive('Semua');render('Semua');
+
+const tm=[
+ ['Pengerjaan bongkar rumah tua di area perumahan padat berjalan rapi dan minim keluhan tetangga. Puing langsung diangkut bersih.','Bpk. Hendra Wijaya','Pemilik Properti — Jakarta Selatan'],
+ ['Komunikasi timnya enak, hitungan potongan harga dari besi dan kusen bekas juga transparan. Sangat membantu efisiensi budget proyek.','Ibu Ratna Kusuma','Kontraktor Renovasi — Tangerang'],
+ ['Pembongkaran gudang baja selesai lebih cepat dari jadwal SPK dan seluruh tim memakai perlengkapan keselamatan lengkap.','Bpk. Dimas Prasetyo','Manajer Operasional Gudang — Bekasi']
+];
+const td=document.getElementById('tDots');
+function showT(i){
+  document.getElementById('tQuote').textContent='"'+tm[i][0]+'"';
+  document.getElementById('tName').textContent=tm[i][1];
+  document.getElementById('tRole').textContent=tm[i][2];
+  td.querySelectorAll('button').forEach((b,j)=>b.className='w-11 h-2 transition '+(j===i?'bg-cobalt':'bg-ink/25'));
+}
+td.innerHTML=tm.map((_,i)=>`<button data-i="${i}" aria-label="Testimoni ${i+1}"></button>`).join('');
+td.addEventListener('click',e=>{const b=e.target.closest('button');if(b)showT(+b.dataset.i)});
+showT(0);
+
+const faqs=[
+ ['Bagaimana cara menghitung biaya jasa bongkar bangunan?','Biaya dihitung berdasarkan luas bangunan, tingkat kesulitan struktur, akses alat berat, serta nilai taksiran material bekas yang bisa dijual kembali. Setelah survei, Anda menerima rincian biaya tertulis sebelum pekerjaan dimulai.'],
+ ['Apakah survei ke lokasi dikenakan biaya?','Tidak. Survei dan konsultasi estimasi biaya untuk area Jabodetabek sepenuhnya gratis tanpa komitmen.'],
+ ['Apakah puing sisa bongkaran langsung dibersihkan dan dibuang?','Ya. Paket rata tanah sudah mencakup pengangkutan puing menggunakan dump truck hingga lahan bersih.'],
+ ['Bagaimana jika bangunan berada di gang sempit yang tidak masuk ekskavator?','Tim kami menyediakan metode pembongkaran manual dengan peralatan lengkap untuk area dengan akses terbatas.']
+];
+const fq=document.getElementById('faqList');
+fq.innerHTML=faqs.map((f,i)=>`
+<div class="faq-item border-b-2 border-ink ${i===0?'faq-open':''}">
+  <button class="w-full flex justify-between items-center gap-4 text-left py-6 text-lg lg:text-xl font-bold" aria-expanded="${i===0}" aria-controls="faq${i}">
+    <span>${f[0]}</span><i data-lucide="plus" class="plus shrink-0 text-cobalt w-7 h-7"></i></button>
+  <div class="faq-body" id="faq${i}"><div><p class="pb-6 pr-10 opacity-85">${f[1]}</p></div></div>
+</div>`).join('');
+fq.addEventListener('click',e=>{
+  const btn=e.target.closest('button');if(!btn)return;
+  const it=btn.parentElement,open=!it.classList.contains('faq-open');
+  fq.querySelectorAll('.faq-item').forEach(x=>{x.classList.remove('faq-open');x.querySelector('button').setAttribute('aria-expanded','false')});
+  if(open){it.classList.add('faq-open');btn.setAttribute('aria-expanded','true')}
+});
+
+const mb=document.getElementById('menuBtn'),mm=document.getElementById('mobileMenu');
+mb.onclick=()=>{const h=mm.classList.toggle('hidden');mb.setAttribute('aria-expanded',!h)};
+mm.querySelectorAll('a').forEach(a=>a.onclick=()=>{mm.classList.add('hidden');mb.setAttribute('aria-expanded','false')});
+
+document.getElementById('surveyForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const v=id=>document.getElementById(id).value.trim();
+  const msg=`Halo Ratakarya, saya ingin meminta survei gratis.\n\nNama: ${v('nama')}\nWhatsApp: ${v('wa')}\nJenis Bangunan: ${v('jenis')}\nLokasi/Kota: ${v('kota')}\nPerkiraan Luas: ${v('luas')} m²`;
+  window.open(WA+encodeURIComponent(msg),'_blank','noopener');
+});
+document.getElementById('yr').textContent=new Date().getFullYear();
+lucide.createIcons();
+</script>
+</body>
+</html>
